@@ -1,16 +1,17 @@
- // GradeBookTest.java
- // create GradeBook object and invoke its determinesClassAverage method.
-
-  public class GradeBookTest
+ // GradebookTest.java
+ // GradeBookTest creates a GradeBook object using an array of grades,
+ // then invokes method processGrades to analyze them.
+  public class GradebookTest
   {
+      // main method begins program execution
       public static void main( String[] args )
       {
-          // create GradeBook object myGradeBook and
-          // pass course name to constructor
-          // GradeBookk myGradeBook = new GradeBook (
-          "CS101 Introduction to  Java Programming" );
+          //array of student grades
+          int[] gradesArray = { 87, 68, 94, 100, 83, 78, 85, 91, 76, 87 };
 
-            myGradebook.displayMessage(); // display welcome messaage
-           myGradeBOOk.determineClassAverage(); // find average of 10 grades
+          Gradebook myGradebook = new Gradebook (
+          "CS101 Introduction to  Java Programming", gradesArray );
+            myGradebook.displayMessage();
+           myGradebook.processGrades();
       } // end main
-  } // end class GradeBookTest
+  } // end class GradebookTest
