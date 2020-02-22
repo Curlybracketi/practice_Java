@@ -1,18 +1,32 @@
  // InitArray.java
- // Initializing the element 0f an array to default values of zero.
+ // Initializing two-dimensional arrays.
 
   public class InitArray
   {
+      // create and output two dimensional arrays
       public static void main( String[] args )
       {
-          int[] array; // declare array named array
+          int[][] array1 = {{1, 2, 3}, {4, 5, 6}};
+          int[][] array2 = {{1, 2}, {3}, {4, 5, 6}};
 
-          array = new int[ 10 ]; // create the array object
+          System.out.println("value in array1 by row are");
+          outputArray(array1); // displays array1 by now
 
-          System.out.printf( "%s%8s\n", "Index", "Value" ); // column headings
-
-          // output each array element's value
-          for ( int counter = 0; counter < array.length; counter++ )
-              System.out.printf( "%5d%8d\n", counter, array[ counter ] );
+          System.out.println("\nValue in array1 by row are");
+          outputArray(array2); // displays arrays2 by now
       } // end main
+
+      // output rows and columns of a two-dimensional array
+      public static void outputArray( int [][] array )
+      {
+          // loop through array's rows
+          for ( int row = 0; row < array.length; row++ )
+          {
+              // loop through columns of current row
+              for ( int column = 0; column < array [ row ].length; column++ )
+              System.out.printf( "%d ", array[ row ] [ column ] );
+
+              System.out.println(); // start new line of output
+          } // end outer for
+      } // end method outputArray
   } // end class InitArray

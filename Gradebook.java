@@ -1,5 +1,5 @@
  // Gradebook.java
- // Gradebook class using an array to store test grades.
+ // Gradebook class using a two-dimensional array to store test grades.
 
  public class Gradebook
          {
