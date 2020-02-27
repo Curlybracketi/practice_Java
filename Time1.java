@@ -1,6 +1,6 @@
  // Time1.java
- // Time1 class declaration maintains the time in 24-
- package com.deitel.jhto.cho8;
+ // Time1 class declaration maintains the time in 24-hour format.
+ package com.deitel.jhtp.ch08;
 
  public class Time1
  {

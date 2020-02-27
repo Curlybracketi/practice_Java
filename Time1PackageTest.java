@@ -1,11 +1,11 @@
-// Time1PackageTest.java
-// Time1 object used in an application.
-import com.deitel.jhtp.cho8.Time1; // import class Time1
+ // Time1PackageTest.java
+ // Time1 object used in an application.
+ import com.deitel.jhtp.ch08.Time1; // import class Time1
 
-public class Time1PackageTest
-{
-    public static void main( String[] args )
-    {
+ public class Time1PackageTest
+ {
+     public static void main( String[] args )
+     {
         // create and initialize a Time1 object
         Time1 time = new Time1(); // invokes Time1 constructor
 
@@ -40,5 +40,5 @@ public class Time1PackageTest
         System.out.println( time.toUniversalString() );
         System.out.print( "Standard time: " );
         System.out.println( time.toString() );
-        } // end main
-} // end class Time1PackageTest
+     } // end main
+ } // end class Time1PackageTest
