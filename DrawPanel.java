@@ -1,23 +1,48 @@
  // DrawPanel.java
- // using drawing to connect the corners of a panel.
+ // program that uses class MyLine
+ // to draw random lines.
+ import java.awt.Color;
  import java.awt.Graphics;
+ import java.util.Random;
  import javax.swing.JPanel;
 
  public class DrawPanel extends JPanel
-{
-    // draw an X from the corners of the panel
-    public void paintComponent( Graphics g )
-    {
-        // call paintComponent to ensure the panel displays correctly
-        super.paintComponent( g );
+ {
+     private Random randomNumbers = new Random();
+     private MyLine[] lines; // array of lines
 
-        int width = getWidth(); // total width
-        int height = getHeight(); // total height
+     // constructor, creates a panel with random shapes
+     public DrawPanel()
+     {
+         setBackground( Color.WHITE );
 
-        // draw a line from the upper-left to the lower-right
-        g.drawLine( 0, 0, width, height );
+         lines = new MyLine[ 5 + randomNumbers.nextInt( 5 ) ];
 
-        // draw aline from lower-left to the upper-right
-        g.drawLine( 0, height, width, 0 );
-    } // end method paintComponent
-} // end class DrawPanel
+         // create lines
+         for ( int count = 0; count < lines.length; count++ )
+         {
+             // generate random coordinate
+             int x1 = randomNumbers.nextInt(300 );
+             int y1 = randomNumbers.nextInt( 300 );
+             int x2 = randomNumbers.nextInt( 300 );
+             int y2 = randomNumbers.nextInt( 300 );
+
+             // generate a random color
+             Color color = new Color ( randomNumbers.nextInt( 256 ),
+                     randomNumbers.nextInt( 256 ), randomNumbers.nextInt( 256) );
+
+             // add the line to the list of lines to be displayed
+             lines[ count ] =new  MyLine( x1, y1, x2, y2, color );
+         } // end for
+     } // end DrawPanel constructor
+
+     // for each shape array, draw the individual shapes
+     public void paintComponent( Graphics g )
+     {
+         super.paintComponent( g );
+
+         // draw the lines
+         for ( MyLine line : lines )
+             line.draw( g );
+     } // end method paintComponent
+ }  // end class DrawPanel
